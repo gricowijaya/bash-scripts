@@ -1,0 +1,2 @@
+#!/bin/bash
+mpv /home/gricowijaya/Music/${1}
