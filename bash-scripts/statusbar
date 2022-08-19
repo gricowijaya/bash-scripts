@@ -1,0 +1,7 @@
+#!/bin/bash
+while true; do
+  # to have the status at the bottom center bar
+  xsetroot -name "dwm-6.2;                                       DATE [$(date | sed s/,//)] | [ $(free -h | sed '2!d' | awk '{print $3}')] | [ $(acpi -t | awk '{print $4}')C] | [ $(acpi | sed '1!d')]"
+sleep 1;
+done
+
