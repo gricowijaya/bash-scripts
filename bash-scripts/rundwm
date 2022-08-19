@@ -1,0 +1,5 @@
+#!/bin/bash
+while type dwm > /dev/null ; do dwm && continue || break ; done
+
+xset +fp /home/gricowijaya/.local/share/fonts
+xset fp rehash
