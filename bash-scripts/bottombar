@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while true; do 
+    (( 10#$(date +%s) % 60 )) || bottomdisp=$(date)
+    xsetroot -name "$(topbar);$bottomdisp";
+    sleep 1;
+done  &
