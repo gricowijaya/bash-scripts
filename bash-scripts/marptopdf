@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+npx @marp-team/marp-cli@latest {1} --pdf
+npx @marp-team/marp-cli@latest {1} -o output.pdf
