@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+sudo pacman -S mariadb 
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+sudo mysql_secure_installation
+
