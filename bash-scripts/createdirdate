@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+for i in {1..5}
+do
+   NEXT_DATE=$(date +%m-%d-%Y -d "+$i day")
+   echo "$NEXT_DATE"
+   # mkdir "$NEXT_DATE"
+   # touch "$NEXT_DATE"/notes.md
+done
