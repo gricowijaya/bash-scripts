@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+
+yarn init -y
+yarn add express morgan sequelize pg bcrypt
+yarn add -D nodemon  
+
+git init
+touch .gitignore
+
+echo ".env" >> .gitignore
+echo "node_modules" >> .gitignore
+echo ".vercel" >> .gitignore
+
+touch .env.example
+echo "DB_USERNAME=" >> .env.example
+echo "DB_PASSWORD=" >> .env.example
+echo "DB_NAME=" >> .env.example
+echo "DB_HOST=" >> .env.example
+echo "DB_PORT=" >> .env.example
+echo "DB_DIALECT=" >> .env.example
+echo "PORT=" >> .env.example
+echo "JWT_SECRET_KEY=" >> .env.example
+echo "GOOGLE_CLIENT_ID=" >> .env.example
+echo "GOOGLE_CLIENT_SECRET=" >> .env.example
+echo "FACEBOOK_CLIENT_ID=" >> .env.example
+echo "FACEBOOK_CLIENT_SECRET=" >> .env.example
+
+cp .env.example .env
+
+touch .sequelizerc
+echo "const path = require('path');" >> .sequelizerc
+echo "module.exports = {" >> .sequelizerc
+echo "'config': path.resolve('config', 'config.js')," >> .sequelizerc
+echo "'models-path': path.resolve('db', 'models')," >> .sequelizerc
+echo "'seeders-path': path.resolve('db', 'seeders')," >> .sequelizerc
+echo "'migrations-path': path.resolve('db', 'migrations')" >> .sequelizerc
+echo "};" >> .sequelizerc
+
+sequelize init
+
+mkdir controllers
+touch controllers/index.js
+
+mkdir routes
+touch routes/index.js
+
+mkdir middlewares
+touch middlewares/index.js
+
+mkdir lib
+mkdir lib/index.js
+
+touch app.js
