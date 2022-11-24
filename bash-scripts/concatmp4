@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# Loop Through the File
+for f in *.mp4
+do
+    echo file \'$f\' >> list.txt;
+done
+
+# concat the video with ffmpeg
+ffmpeg -safe 0 -f concat -i list.txt -c copy result.mp4;

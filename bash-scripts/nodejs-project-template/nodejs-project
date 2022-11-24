@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 yarn init -y
-yarn add express morgan sequelize pg bcrypt
+yarn add express morgan sequelize pg bcrypt dotenv
 yarn add -D nodemon  
 
 git init
