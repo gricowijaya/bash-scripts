@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ffmpeg -i ${1} -ss 00:00:00 -t 00:00:30 -vf \
+  "fps=15,scale=320:-1:flags=lanczos" \ 
+  -loop -0 -f gif temp.gif
+
+gifsicle --optimize=3 --delay=3 temp.gif > ${1}.gif
+
+rm temp.gif
+
